@@ -667,8 +667,8 @@ select option{background:white;}
   <div class="stat-grid" style="margin-bottom:24px;">
     <div class="stat-card" style="--accent-color:var(--navy)">
       <div class="stat-label">New &amp; Competing Renewal FY26 YTD</div>
-      <div class="stat-value" id="my-nih-total">—</div>
-      <div class="stat-sub" id="my-nih-total-sub"></div>
+      <div class="stat-value" id="my-nih-new-count">—</div>
+      <div class="stat-sub" id="my-nih-new-count-sub"></div>
     </div>
     <div class="stat-card" style="--accent-color:var(--teal)">
       <div class="stat-label">Multi-Year Awards (any)</div>
@@ -691,8 +691,8 @@ select option{background:white;}
   <div class="stat-grid" style="margin-bottom:24px;">
     <div class="stat-card" style="--accent-color:var(--navy)">
       <div class="stat-label">New &amp; Competing Renewal FY26 YTD</div>
-      <div class="stat-value" id="my-ucsf-total">—</div>
-      <div class="stat-sub" id="my-ucsf-total-sub"></div>
+      <div class="stat-value" id="my-ucsf-new-count">—</div>
+      <div class="stat-sub" id="my-ucsf-new-count-sub"></div>
     </div>
     <div class="stat-card" style="--accent-color:var(--teal)">
       <div class="stat-label">Multi-Year Awards (any)</div>
@@ -715,8 +715,8 @@ select option{background:white;}
   <div class="stat-grid" style="margin-bottom:24px;">
     <div class="stat-card" style="--accent-color:var(--navy)">
       <div class="stat-label">New &amp; Competing Renewal FY26 YTD</div>
-      <div class="stat-value" id="my-dom-total">—</div>
-      <div class="stat-sub" id="my-dom-total-sub"></div>
+      <div class="stat-value" id="my-dom-new-count">—</div>
+      <div class="stat-sub" id="my-dom-new-count-sub"></div>
     </div>
     <div class="stat-card" style="--accent-color:var(--teal)">
       <div class="stat-label">Multi-Year Awards (any)</div>
@@ -2264,21 +2264,24 @@ function renderMultiYear() {
     { key:'dom',  filter: r => isDOM(r) },
   ];
 
-  // FY26 YTD tiles
-  scopes.forEach(({ key, filter }) => {
-    const rows26 = ytdSlice(allData['2026']||[], fy26Start, fy26End).filter(filter);
-    const rows25 = ytdSlice(allData['2025']||[], fy25Start, fy25End).filter(filter);
-    const rows24 = allData['2024'] ? ytdSlice(allData['2024']||[], fy24Start, fy24End).filter(filter) : null;
-    const st26 = myStats(rows26), st25 = myStats(rows25), st24 = rows24 ? myStats(rows24) : null;
+  // Use renderYTDTiles for consistent New+CR counting — same as all other tabs
+  renderYTDTiles('my-nih',  r => true);
+  renderYTDTiles('my-ucsf', r => r._ucsf);
+  renderYTDTiles('my-dom',  r => isDOM(r));
 
+  // Multi-year specific tiles — use ytdRows for consistency
+  const { fy26Start: s26, fy26End: e26, fy25Start: s25, fy25End: e25, fy24Start: s24, fy24End: e24 } = getYTDWindows();
+  scopes.forEach(({ key, filter }) => {
+    const f26 = ytdRows(allData['2026']||[], s26, e26).filter(filter);
+    const f25 = ytdRows(allData['2025']||[], s25, e25).filter(filter);
+    const f24 = allData['2024'] ? ytdRows(allData['2024']||[], s24, e24).filter(filter) : null;
+    const st26 = myStats(f26), st25 = myStats(f25), st24 = f24 ? myStats(f24) : null;
     const pct = (n, t) => t ? ` (${(n/t*100).toFixed(1)}%)` : '';
-    s(`my-${key}-total`, fmtN(st26.total));
-    s(`my-${key}-total-sub`, fmtChg(st26.total, st25.total, st24?.total, 'n'));
-    s(`my-${key}-any`, `${fmtN(st26.any)}${pct(st26.any, st26.total)}`);
-    s(`my-${key}-any-sub`, fmtChg(st26.any, st25.any, st24?.any, 'n'));
-    s(`my-${key}-2yr`, `${fmtN(st26.two)}${pct(st26.two, st26.total)}`);
-    s(`my-${key}-2yr-sub`, fmtChg(st26.two, st25.two, st24?.two, 'n'));
-    s(`my-${key}-long`, `${fmtN(st26.long)}${pct(st26.long, st26.total)}`);
+    s(`my-${key}-any`,      `${fmtN(st26.any)}${pct(st26.any, st26.total)}`);
+    s(`my-${key}-any-sub`,  fmtChg(st26.any,  st25.any,  st24?.any,  'n'));
+    s(`my-${key}-2yr`,      `${fmtN(st26.two)}${pct(st26.two, st26.total)}`);
+    s(`my-${key}-2yr-sub`,  fmtChg(st26.two,  st25.two,  st24?.two,  'n'));
+    s(`my-${key}-long`,     `${fmtN(st26.long)}${pct(st26.long, st26.total)}`);
     s(`my-${key}-long-sub`, fmtChg(st26.long, st25.long, st24?.long, 'n'));
   });
 
