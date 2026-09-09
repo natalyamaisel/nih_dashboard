@@ -134,6 +134,7 @@ select option{background:white;}
   <button class="tab" onclick="switchTab('domytd',this)">DOM FY26 Detail</button>
   <button class="tab" onclick="switchTab('otherdeptytd',this)">Other Dept FY26 Detail</button>
   <button class="tab" onclick="switchTab('multiyear',this)">Multi-Year Funding</button>
+  <button class="tab" onclick="switchTab('datatable',this)">Data Table</button>
 </div>
 
 <div class="main">
@@ -666,22 +667,22 @@ select option{background:white;}
   <div style="font-size:18px;font-weight:800;color:var(--navy);margin-bottom:12px;">All NIH</div>
   <div class="stat-grid" style="margin-bottom:24px;">
     <div class="stat-card" style="--accent-color:var(--navy)">
-      <div class="stat-label">New &amp; Competing Renewal FY26 YTD</div>
-      <div class="stat-value" id="my-nih-new-count">—</div>
-      <div class="stat-sub" id="my-nih-new-count-sub"></div>
+      <div class="stat-label">Multi-Year Funding FY26 YTD (Type 1 &amp; 2)</div>
+      <div class="stat-value" id="my-nih-fund">—</div>
+      <div class="stat-sub" id="my-nih-fund-sub"></div>
     </div>
     <div class="stat-card" style="--accent-color:var(--teal)">
-      <div class="stat-label">Multi-Year Awards (any)</div>
+      <div class="stat-label">Multi-Year Awards FY26 YTD (Type 1 &amp; 2)</div>
       <div class="stat-value" id="my-nih-any">—</div>
       <div class="stat-sub" id="my-nih-any-sub"></div>
     </div>
     <div class="stat-card" style="--accent-color:var(--blue)">
-      <div class="stat-label">2-Year Awards</div>
+      <div class="stat-label">2-Year Awards FY26 YTD (Type 1 &amp; 2)</div>
       <div class="stat-value" id="my-nih-2yr">—</div>
       <div class="stat-sub" id="my-nih-2yr-sub"></div>
     </div>
     <div class="stat-card" style="--accent-color:var(--orange)">
-      <div class="stat-label">Long-Term Awards (&gt;2yr)</div>
+      <div class="stat-label">Long-Term Awards FY26 YTD &gt;2yr (Type 1 &amp; 2)</div>
       <div class="stat-value" id="my-nih-long">—</div>
       <div class="stat-sub" id="my-nih-long-sub"></div>
     </div>
@@ -690,22 +691,22 @@ select option{background:white;}
   <div style="font-size:18px;font-weight:800;color:var(--navy);margin-bottom:12px;">UCSF</div>
   <div class="stat-grid" style="margin-bottom:24px;">
     <div class="stat-card" style="--accent-color:var(--navy)">
-      <div class="stat-label">New &amp; Competing Renewal FY26 YTD</div>
-      <div class="stat-value" id="my-ucsf-new-count">—</div>
-      <div class="stat-sub" id="my-ucsf-new-count-sub"></div>
+      <div class="stat-label">Multi-Year Funding FY26 YTD (Type 1 &amp; 2)</div>
+      <div class="stat-value" id="my-ucsf-fund">—</div>
+      <div class="stat-sub" id="my-ucsf-fund-sub"></div>
     </div>
     <div class="stat-card" style="--accent-color:var(--teal)">
-      <div class="stat-label">Multi-Year Awards (any)</div>
+      <div class="stat-label">Multi-Year Awards FY26 YTD (Type 1 &amp; 2)</div>
       <div class="stat-value" id="my-ucsf-any">—</div>
       <div class="stat-sub" id="my-ucsf-any-sub"></div>
     </div>
     <div class="stat-card" style="--accent-color:var(--blue)">
-      <div class="stat-label">2-Year Awards</div>
+      <div class="stat-label">2-Year Awards FY26 YTD (Type 1 &amp; 2)</div>
       <div class="stat-value" id="my-ucsf-2yr">—</div>
       <div class="stat-sub" id="my-ucsf-2yr-sub"></div>
     </div>
     <div class="stat-card" style="--accent-color:var(--orange)">
-      <div class="stat-label">Long-Term Awards (&gt;2yr)</div>
+      <div class="stat-label">Long-Term Awards FY26 YTD &gt;2yr (Type 1 &amp; 2)</div>
       <div class="stat-value" id="my-ucsf-long">—</div>
       <div class="stat-sub" id="my-ucsf-long-sub"></div>
     </div>
@@ -714,22 +715,22 @@ select option{background:white;}
   <div style="font-size:18px;font-weight:800;color:var(--navy);margin-bottom:12px;">DOM</div>
   <div class="stat-grid" style="margin-bottom:24px;">
     <div class="stat-card" style="--accent-color:var(--navy)">
-      <div class="stat-label">New &amp; Competing Renewal FY26 YTD</div>
-      <div class="stat-value" id="my-dom-new-count">—</div>
-      <div class="stat-sub" id="my-dom-new-count-sub"></div>
+      <div class="stat-label">Multi-Year Funding FY26 YTD (Type 1 &amp; 2)</div>
+      <div class="stat-value" id="my-dom-fund">—</div>
+      <div class="stat-sub" id="my-dom-fund-sub"></div>
     </div>
     <div class="stat-card" style="--accent-color:var(--teal)">
-      <div class="stat-label">Multi-Year Awards (any)</div>
+      <div class="stat-label">Multi-Year Awards FY26 YTD (Type 1 &amp; 2)</div>
       <div class="stat-value" id="my-dom-any">—</div>
       <div class="stat-sub" id="my-dom-any-sub"></div>
     </div>
     <div class="stat-card" style="--accent-color:var(--blue)">
-      <div class="stat-label">2-Year Awards</div>
+      <div class="stat-label">2-Year Awards FY26 YTD (Type 1 &amp; 2)</div>
       <div class="stat-value" id="my-dom-2yr">—</div>
       <div class="stat-sub" id="my-dom-2yr-sub"></div>
     </div>
     <div class="stat-card" style="--accent-color:var(--orange)">
-      <div class="stat-label">Long-Term Awards (&gt;2yr)</div>
+      <div class="stat-label">Long-Term Awards FY26 YTD &gt;2yr (Type 1 &amp; 2)</div>
       <div class="stat-value" id="my-dom-long">—</div>
       <div class="stat-sub" id="my-dom-long-sub"></div>
     </div>
@@ -821,6 +822,89 @@ select option{background:white;}
     <button class="chart-dl-btn" onclick="downloadChart('my-fund-all-dom-chart','MultiYear_Funding_All_DOM')">↓ PNG + Table</button>
     <div class="chart-wrap" style="height:320px"><canvas id="my-fund-all-dom-chart" role="img" aria-label="Cumulative multi-year funding all types for DOM"></canvas></div>
   </div>
+</div>
+
+<!-- ══ DATA TABLE ═══════════════════════════════════════════ -->
+<div class="panel" id="tab-datatable">
+  <div class="ytd-banner"><b>Year to Date Comparison:</b> <span id="datatable-ytd-label"></span></div>
+  <div style="font-size:13px;color:var(--muted);margin-bottom:16px;">All figures use YTD window (Oct 1 – pull date). MYF = Multi-Year Funding (Type 1 &amp; 2 only). % changes compare FY26 YTD to prior year YTD.</div>
+
+  <style>
+    .dt-table { width:100%; border-collapse:collapse; font-size:13px; margin-bottom:28px; }
+    .dt-table th { background:var(--navy); color:#fff; padding:7px 10px; text-align:right; font-weight:700; font-size:12px; white-space:nowrap; }
+    .dt-table th:first-child { text-align:left; }
+    .dt-table td { padding:6px 10px; text-align:right; border-bottom:1px solid var(--border); white-space:nowrap; }
+    .dt-table td:first-child { text-align:left; font-weight:700; color:var(--navy); }
+    .dt-table tr:nth-child(even) { background:#f7f9fc; }
+    .dt-table tr.pct-row td { color:var(--muted); font-size:12px; }
+    .dt-table tr.pct-row td.up { color:#2a9d3a; font-weight:700; }
+    .dt-table tr.pct-row td.dn { color:#dc2626; font-weight:700; }
+    .dt-table .grp-hdr { background:#e8ecf5; color:var(--navy); font-weight:700; text-align:center; font-size:11px; letter-spacing:.05em; text-transform:uppercase; }
+    .dt-section-title { font-size:18px; font-weight:800; color:var(--navy); margin:20px 0 8px; }
+  </style>
+
+  <div class="dt-section-title">All NIH</div>
+  <table class="dt-table" id="dt-nih-table">
+    <thead>
+      <tr>
+        <th></th>
+        <th class="grp-hdr" colspan="2">New &amp; Competing Renewal (Type 1+2)</th>
+        <th class="grp-hdr" colspan="2">Non-Competing Continuation (Type 5)</th>
+        <th class="grp-hdr" colspan="2">All Awards</th>
+        <th class="grp-hdr" colspan="2">Multi-Year Funding (MYF)</th>
+      </tr>
+      <tr>
+        <th></th>
+        <th># Awards</th><th>$ Funding</th>
+        <th># Awards</th><th>$ Funding</th>
+        <th># Awards</th><th>$ Funding</th>
+        <th># Awards</th><th>$ Funding</th>
+      </tr>
+    </thead>
+    <tbody id="dt-nih-body"></tbody>
+  </table>
+
+  <div class="dt-section-title">UCSF</div>
+  <table class="dt-table" id="dt-ucsf-table">
+    <thead>
+      <tr>
+        <th></th>
+        <th class="grp-hdr" colspan="2">New &amp; Competing Renewal (Type 1+2)</th>
+        <th class="grp-hdr" colspan="2">Non-Competing Continuation (Type 5)</th>
+        <th class="grp-hdr" colspan="2">All Awards</th>
+        <th class="grp-hdr" colspan="2">Multi-Year Funding (MYF)</th>
+      </tr>
+      <tr>
+        <th></th>
+        <th># Awards</th><th>$ Funding</th>
+        <th># Awards</th><th>$ Funding</th>
+        <th># Awards</th><th>$ Funding</th>
+        <th># Awards</th><th>$ Funding</th>
+      </tr>
+    </thead>
+    <tbody id="dt-ucsf-body"></tbody>
+  </table>
+
+  <div class="dt-section-title">DOM</div>
+  <table class="dt-table" id="dt-dom-table">
+    <thead>
+      <tr>
+        <th></th>
+        <th class="grp-hdr" colspan="2">New &amp; Competing Renewal (Type 1+2)</th>
+        <th class="grp-hdr" colspan="2">Non-Competing Continuation (Type 5)</th>
+        <th class="grp-hdr" colspan="2">All Awards</th>
+        <th class="grp-hdr" colspan="2">Multi-Year Funding (MYF)</th>
+      </tr>
+      <tr>
+        <th></th>
+        <th># Awards</th><th>$ Funding</th>
+        <th># Awards</th><th>$ Funding</th>
+        <th># Awards</th><th>$ Funding</th>
+        <th># Awards</th><th>$ Funding</th>
+      </tr>
+    </thead>
+    <tbody id="dt-dom-body"></tbody>
+  </table>
 </div>
 
 </div><!-- /main -->
@@ -1723,7 +1807,7 @@ function switchTab(name, el) {
   if (el) el.classList.add('active');
   ({summary:renderSummary,overview:renderOverview,ucsf:renderUCSF,dom:renderDOM,
     otherdept:()=>renderOtherDept(true),peers:renderPeers,domytd:renderDOMYTD,
-    otherdeptytd:renderOtherDeptYTD,multiyear:renderMultiYear}[name]||(() => {}))();
+    otherdeptytd:renderOtherDeptYTD,multiyear:renderMultiYear,datatable:renderDataTable}[name]||(() => {}))();
 }
 
 // ═══════════════════════════════════════════════════════════════════
@@ -2216,6 +2300,30 @@ function renderODYTDTable(fy){
 }
 
 // ═══════════════════════════════════════════════════════════════════
+//  MYF YTD VALUE — global helper used by Multi-Year and Data Table tabs
+// ═══════════════════════════════════════════════════════════════════
+function myYTDVal(y, filter, valueKey, typeFilter) {
+  const cutoff = getCutoff();
+  const allYears = Object.keys(allData).sort();
+  const currentFYInt = parseInt(allYears[allYears.length-1]);
+  const fyInt = parseInt(y);
+  const yearOffset = currentFYInt - fyInt;
+  const fyStart = new Date(fyInt-1, 9, 1);
+  const fyEnd = new Date(cutoff.year - yearOffset, cutoff.month, cutoff.day, 23, 59, 59);
+  let total = 0;
+  (allData[y]||[]).filter(filter).forEach(r => {
+    if ((r._my||0) === 0) return;
+    if (typeFilter && !['1','2'].includes(String(r.award_type||'').trim())) return;
+    const raw = (r.award_notice_date||'').toString().trim().slice(0,10);
+    if (!raw) return;
+    const d = new Date(raw); if (isNaN(d)) return;
+    if (d < fyStart || d > fyEnd) return;
+    total += valueKey === 'amount' ? (r.award_amount||0) : 1;
+  });
+  return total;
+}
+
+// ═══════════════════════════════════════════════════════════════════
 //  TAB: MULTI-YEAR FUNDING
 // ═══════════════════════════════════════════════════════════════════
 function renderMultiYear() {
@@ -2264,21 +2372,28 @@ function renderMultiYear() {
     { key:'dom',  filter: r => isDOM(r) },
   ];
 
-  // Use renderYTDTiles for consistent New+CR counting — same as all other tabs
-  renderYTDTiles('my-nih',  r => true);
-  renderYTDTiles('my-ucsf', r => r._ucsf);
-  renderYTDTiles('my-dom',  r => isDOM(r));
-
-  // Multi-year specific tiles — use ytdRows for consistency
+  // Multi-year tiles — use myYTDVal which uses same cutoff as charts
   const { fy26Start: s26, fy26End: e26, fy25Start: s25, fy25End: e25, fy24Start: s24, fy24End: e24 } = getYTDWindows();
   scopes.forEach(({ key, filter }) => {
+    // Fund and count — use myYTDVal to match chart values exactly
+    const fund26 = myYTDVal(years[2]||'2026', filter, 'amount', true);
+    const fund25 = myYTDVal(years[1]||'2025', filter, 'amount', true);
+    const fund24 = myYTDVal(years[0]||'2024', filter, 'amount', true);
+    const any26  = myYTDVal(years[2]||'2026', filter, 'count',  true);
+    const any25  = myYTDVal(years[1]||'2025', filter, 'count',  true);
+    const any24  = myYTDVal(years[0]||'2024', filter, 'count',  true);
+
+    // 2yr/long breakdown still from myStats
     const f26 = ytdRows(allData['2026']||[], s26, e26).filter(filter);
     const f25 = ytdRows(allData['2025']||[], s25, e25).filter(filter);
     const f24 = allData['2024'] ? ytdRows(allData['2024']||[], s24, e24).filter(filter) : null;
     const st26 = myStats(f26), st25 = myStats(f25), st24 = f24 ? myStats(f24) : null;
+
     const pct = (n, t) => t ? ` (${(n/t*100).toFixed(1)}%)` : '';
-    s(`my-${key}-any`,      `${fmtN(st26.any)}${pct(st26.any, st26.total)}`);
-    s(`my-${key}-any-sub`,  fmtChg(st26.any,  st25.any,  st24?.any,  'n'));
+    s(`my-${key}-fund`,     fmt$(fund26));
+    s(`my-${key}-fund-sub`, fmtChg(fund26, fund25, fund24, '$'));
+    s(`my-${key}-any`,      `${fmtN(any26)}${pct(any26, st26.total)}`);
+    s(`my-${key}-any-sub`,  fmtChg(any26, any25, any24, 'n'));
     s(`my-${key}-2yr`,      `${fmtN(st26.two)}${pct(st26.two, st26.total)}`);
     s(`my-${key}-2yr-sub`,  fmtChg(st26.two,  st25.two,  st24?.two,  'n'));
     s(`my-${key}-long`,     `${fmtN(st26.long)}${pct(st26.long, st26.total)}`);
@@ -2296,6 +2411,8 @@ function renderMultiYear() {
         const raw = (r.award_notice_date||'').toString().trim().slice(0,10);
         if (!raw) return;
         const d = new Date(raw); if (isNaN(d)) return;
+        const fyStart = new Date(parseInt(y)-1, 9, 1);
+        if (d < fyStart) return;
         monthly[calToFYIdx(d.getMonth())] += valueKey === 'amount' ? (r.award_amount||0) : 1;
       });
       const cumData = []; let running = 0;
@@ -2320,14 +2437,22 @@ function renderMultiYear() {
   }
 
   function myCumOpts(yLabel, isMoney) {
+    const fmtTip  = v => '$' + Math.round(v * 1e6).toLocaleString();
+    const fmtAxis = v => {
+      const dollars = v * 1e6;
+      if (dollars >= 1e9)  return '$' + (dollars/1e9).toFixed(1)  + 'B';
+      if (dollars >= 1e6)  return '$' + (dollars/1e6).toFixed(0)  + 'M';
+      if (dollars >= 1e3)  return '$' + (dollars/1e3).toFixed(0)  + 'K';
+      return '$' + dollars.toFixed(0);
+    };
     return {
       responsive: true, maintainAspectRatio: false,
       plugins: { legend: { labels: { color:NAVY, font:{size:13}, boxWidth:14 } },
         tooltip: { backgroundColor:'#fff', borderColor:'#D8DCE6', borderWidth:1, titleColor:NAVY, bodyColor:MUTED,
-          callbacks: { label: ctx => ctx.dataset.label+': '+(isMoney?'$'+ctx.parsed.y.toFixed(1)+'M':ctx.parsed.y.toLocaleString()) } } },
+          callbacks: { label: ctx => ctx.dataset.label+': '+(isMoney ? fmtTip(ctx.parsed.y) : ctx.parsed.y.toLocaleString()) } } },
       scales: {
         x: { ticks:{color:'#222',font:{size:13}}, grid:{display:false} },
-        y: { ticks:{color:'#222',font:{size:13},precision:0,callback:v=>isMoney?'$'+v.toFixed(0)+'M':(Number.isInteger(v)?v.toLocaleString():'')},
+        y: { ticks:{color:'#222',font:{size:13},precision:0,callback:v=>isMoney?fmtAxis(v):(Number.isInteger(v)?v.toLocaleString():'')},
              grid:{color:'#E8ECF5'}, title:{display:true,text:yLabel,color:MUTED,font:{size:13}} }
       }
     };
@@ -2421,37 +2546,119 @@ function renderMultiYear() {
   destroyChart('my-fund-nih-chart');
   charts['my-fund-nih-chart'] = new Chart(document.getElementById('my-fund-nih-chart'), {
     type:'line', data:{labels:FY_MONTH_LABELS, datasets:buildMyCum(r=>true,'amount',true)},
-    options:myCumOpts('Cumulative Funding ($M)',true)});
+    options:myCumOpts('Cumulative Funding ($)',true)});
 
   // Cumulative funding Type 1+2 — UCSF
   destroyChart('my-fund-ucsf-chart');
   charts['my-fund-ucsf-chart'] = new Chart(document.getElementById('my-fund-ucsf-chart'), {
     type:'line', data:{labels:FY_MONTH_LABELS, datasets:buildMyCum(r=>r._ucsf,'amount',true)},
-    options:myCumOpts('Cumulative Funding ($M)',true)});
+    options:myCumOpts('Cumulative Funding ($)',true)});
 
   // Cumulative funding Type 1+2 — DOM
   destroyChart('my-fund-dom-chart');
   charts['my-fund-dom-chart'] = new Chart(document.getElementById('my-fund-dom-chart'), {
     type:'line', data:{labels:FY_MONTH_LABELS, datasets:buildMyCum(r=>isDOM(r),'amount',true)},
-    options:myCumOpts('Cumulative Funding ($M)',true)});
+    options:myCumOpts('Cumulative Funding ($)',true)});
 
   // Cumulative funding all types — All NIH
   destroyChart('my-fund-all-nih-chart');
   charts['my-fund-all-nih-chart'] = new Chart(document.getElementById('my-fund-all-nih-chart'), {
     type:'line', data:{labels:FY_MONTH_LABELS, datasets:buildMyCum(r=>true,'amount',false)},
-    options:myCumOpts('Cumulative Funding ($M)',true)});
+    options:myCumOpts('Cumulative Funding ($)',true)});
 
   // Cumulative funding all types — UCSF
   destroyChart('my-fund-all-ucsf-chart');
   charts['my-fund-all-ucsf-chart'] = new Chart(document.getElementById('my-fund-all-ucsf-chart'), {
     type:'line', data:{labels:FY_MONTH_LABELS, datasets:buildMyCum(r=>r._ucsf,'amount',false)},
-    options:myCumOpts('Cumulative Funding ($M)',true)});
+    options:myCumOpts('Cumulative Funding ($)',true)});
 
   // Cumulative funding all types — DOM
   destroyChart('my-fund-all-dom-chart');
   charts['my-fund-all-dom-chart'] = new Chart(document.getElementById('my-fund-all-dom-chart'), {
     type:'line', data:{labels:FY_MONTH_LABELS, datasets:buildMyCum(r=>isDOM(r),'amount',false)},
-    options:myCumOpts('Cumulative Funding ($M)',true)});
+    options:myCumOpts('Cumulative Funding ($)',true)});
+}
+
+// ═══════════════════════════════════════════════════════════════════
+//  TAB: DATA TABLE
+// ═══════════════════════════════════════════════════════════════════
+function renderDataTable() {
+  setYTDBanner('datatable-ytd-label');
+  const { fy26Start, fy26End, fy25Start, fy25End, fy24Start, fy24End } = getYTDWindows();
+
+  const windows = [
+    { label:'FY 2024 YTD', year:'2024', start:fy24Start, end:fy24End },
+    { label:'FY 2025 YTD', year:'2025', start:fy25Start, end:fy25End },
+    { label:'FY 2026 YTD', year:'2026', start:fy26Start, end:fy26End },
+  ];
+
+  const scopes = [
+    { key:'nih',  filter: r => true,    bodyId:'dt-nih-body' },
+    { key:'ucsf', filter: r => r._ucsf, bodyId:'dt-ucsf-body' },
+    { key:'dom',  filter: r => isDOM(r),bodyId:'dt-dom-body' },
+  ];
+
+  function computeRow(year, start, end, filter) {
+    const rows = ytdRows(allData[year]||[], start, end).filter(filter);
+    const t12  = rows.filter(r => ['1','2'].includes(String(r.award_type||'').trim()));
+    const t5   = rows.filter(r => String(r.award_type||'').trim() === '5');
+    return {
+      n12:  t12.length,
+      f12:  t12.reduce((s,r) => s+(r.award_amount||0), 0),
+      n5:   t5.length,
+      f5:   t5.reduce((s,r) => s+(r.award_amount||0), 0),
+      nAll: rows.length,
+      fAll: rows.reduce((s,r) => s+(r.award_amount||0), 0),
+      nMyf: myYTDVal(year, filter, 'count',  true),
+      fMyf: myYTDVal(year, filter, 'amount', true),
+    };
+  }
+
+  function pctCell(v26, vPrior) {
+    if (!vPrior) return '<td>—</td>';
+    const pct = (v26 - vPrior) / vPrior * 100;
+    const cls = pct >= 0 ? 'up' : 'dn';
+    const sign = pct >= 0 ? '▲' : '▼';
+    return `<td class="${cls}">${sign} ${Math.abs(pct).toFixed(1)}%</td>`;
+  }
+
+  scopes.forEach(({ filter, bodyId }) => {
+    const data = windows.map(w => ({
+      label: w.label,
+      ...computeRow(w.year, w.start, w.end, filter)
+    }));
+
+    const d24 = data[0], d25 = data[1], d26 = data[2];
+
+    const tbody = document.getElementById(bodyId);
+    if (!tbody) return;
+
+    const rows = [
+      ...data.map(d => `
+        <tr>
+          <td>${d.label}</td>
+          <td>${d.n12.toLocaleString()}</td><td>${fmt$(d.f12)}</td>
+          <td>${d.n5.toLocaleString()}</td><td>${fmt$(d.f5)}</td>
+          <td>${d.nAll.toLocaleString()}</td><td>${fmt$(d.fAll)}</td>
+          <td>${d.nMyf.toLocaleString()}</td><td>${fmt$(d.fMyf)}</td>
+        </tr>`),
+      `<tr class="pct-row">
+          <td>% Change FY26 vs FY25</td>
+          ${pctCell(d26.n12,  d25.n12)}  ${pctCell(d26.f12,  d25.f12)}
+          ${pctCell(d26.n5,   d25.n5)}   ${pctCell(d26.f5,   d25.f5)}
+          ${pctCell(d26.nAll, d25.nAll)} ${pctCell(d26.fAll, d25.fAll)}
+          ${pctCell(d26.nMyf, d25.nMyf)} ${pctCell(d26.fMyf, d25.fMyf)}
+        </tr>`,
+      `<tr class="pct-row">
+          <td>% Change FY26 vs FY24</td>
+          ${pctCell(d26.n12,  d24.n12)}  ${pctCell(d26.f12,  d24.f12)}
+          ${pctCell(d26.n5,   d24.n5)}   ${pctCell(d26.f5,   d24.f5)}
+          ${pctCell(d26.nAll, d24.nAll)} ${pctCell(d26.fAll, d24.fAll)}
+          ${pctCell(d26.nMyf, d24.nMyf)} ${pctCell(d26.fMyf, d24.fMyf)}
+        </tr>`,
+    ];
+    tbody.innerHTML = rows.join('');
+  });
 }
 
 // ═══════════════════════════════════════════════════════════════════
